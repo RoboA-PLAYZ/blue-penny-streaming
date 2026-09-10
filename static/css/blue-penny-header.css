@@ -1,0 +1,165 @@
+.page-header {
+  min-height: 68px;
+  padding: 0 clamp(14px, 3.2vw, 48px);
+  background: rgba(3, 7, 17, 0.86) !important;
+  border-bottom: 1px solid rgba(129, 168, 255, 0.11);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(18px) saturate(1.2);
+}
+
+.page-header-left,
+.page-header-left > div,
+.page-header-right,
+.page-header-right > div {
+  min-height: 68px;
+}
+
+.bp-header-left > div {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 30px);
+}
+
+.bp-wordmark {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.bp-wordmark:hover,
+.bp-wordmark:focus-visible {
+  color: #ffffff;
+}
+
+.bp-wordmark-coin {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #211208;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.5), transparent 36%),
+    linear-gradient(145deg, #e3a06a, #c47a44);
+  border: 1px solid rgba(255, 227, 197, 0.58);
+  box-shadow: 0 7px 22px rgba(196, 122, 68, 0.26);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: -0.08em;
+}
+
+.bp-wordmark-text {
+  color: #f7f9ff;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.bp-top-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(13px, 1.8vw, 28px);
+}
+
+.bp-top-nav a {
+  position: relative;
+  padding: 24px 0 21px;
+  color: #b8c4da;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 150ms ease;
+}
+
+.bp-top-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  height: 2px;
+  border-radius: 999px;
+  background: #6ca1ff;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 150ms ease;
+}
+
+.bp-top-nav a:hover,
+.bp-top-nav a:focus-visible {
+  color: #ffffff;
+}
+
+.bp-top-nav a:hover::after,
+.bp-top-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.page-header .search-field input {
+  color: #f7f9ff;
+  background: rgba(12, 23, 44, 0.78);
+  border-color: rgba(129, 168, 255, 0.13);
+}
+
+.page-header .search-field input::placeholder {
+  color: #7f8ca7;
+}
+
+.page-header-right .circle-icon-button,
+.page-header-left .circle-icon-button {
+  color: #eef3ff;
+}
+
+.page-header-right .circle-icon-button:hover,
+.page-header-right .circle-icon-button:focus-visible,
+.page-header-left .circle-icon-button:hover,
+.page-header-left .circle-icon-button:focus-visible {
+  background: rgba(108, 161, 255, 0.13);
+}
+
+@media (min-width: 1101px) {
+  .bp-mobile-menu-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .bp-top-nav {
+    display: none;
+  }
+
+  .bp-wordmark-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-header {
+    padding-left: 8px;
+    padding-right: 10px;
+  }
+
+  .bp-wordmark {
+    gap: 7px;
+  }
+
+  .bp-wordmark-coin {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .bp-wordmark-text {
+    max-width: 92px;
+    overflow: hidden;
+    font-size: 11px;
+    letter-spacing: 0.09em;
+  }
+}
