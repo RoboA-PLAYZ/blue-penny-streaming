@@ -1,25 +1,31 @@
 {% extends "base.html" %}
 
-{% block headtitle %} | Sign Up{% endblock headtitle %}
+{% block headtitle %}Blue Penny | Create Account{% endblock headtitle %}
 
 {% block innercontent %}
 <div class="user-action-form-wrap">
     <div class="user-action-form-inner">
+        <div class="bp-auth-brand">
+            <div class="bp-coin">BP</div>
+            <div>
+                <span class="bp-auth-brand-name">Blue Penny</span>
+                <span class="bp-auth-brand-subtitle">Original streaming</span>
+            </div>
+        </div>
 
-		<h1>Sign Up</h1>
+        <h1>Start watching.</h1>
+        <p class="bp-auth-intro">Create a free Blue Penny account to watch our shows and future releases.</p>
 
-		<p>Already have an account? Then please <a href="{{ login_url }}">sign in</a>.</p>
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button class="primaryAction" type="submit">Create Account</button>
+        </form>
 
-		<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-			{% csrf_token %}
-			{{ form.as_p }}
-			{% if redirect_field_value %}
-				<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-			  {% endif %}
-			  <button type="submit">Sign Up &raquo;</button>
-		</form>
-
+        <p class="bp-auth-switch">Already have an account? <a href="{{ login_url }}">Sign in</a>.</p>
     </div>
 </div>
 {% endblock innercontent %}
-
