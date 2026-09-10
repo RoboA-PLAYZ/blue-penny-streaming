@@ -20,7 +20,7 @@ CAN_SHARE_MEDIA = True
 ALLOW_ANONYMOUS_ACTIONS = []
 CAN_SEE_MEMBERS_PAGE = 'admins'
 SIDEBAR_FOOTER_TEXT = 'Blue Penny Streaming'
-EXTRA_CSS_PATHS = ['/static/css/blue-penny.css']
+EXTRA_CSS_PATHS = ['/static/css/blue-penny.css', '/static/css/blue-penny-header.css']
 
 DATABASES = {
     "default": {
