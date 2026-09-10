@@ -1,55 +1,54 @@
 MediaCMS.site = {
- 	id: 'mediacms',
+    id: 'blue-penny',
     title: "{{PORTAL_NAME}}",
     url: '{{FRONTEND_HOST}}',
     api: '{{FRONTEND_HOST}}/api/v1',
     useRoundedCorners: {% if USE_ROUNDED_CORNERS %}true{% else %}false{% endif %},
     version: '{{VERSION}}',
     theme: {
-    	mode: '{{DEFAULT_THEME}}',
-		switch: {
-			position: 'sidebar',	// Valid values: 'header', 'sidebar'.
-		},
+        mode: '{{DEFAULT_THEME}}',
+        switch: {
+            position: 'sidebar',
+        },
     },
-    logo:{
-    	lightMode:{
+    logo: {
+        lightMode: {
             img: "{{PORTAL_LOGO_DARK_PNG}}",
             svg: "{{PORTAL_LOGO_DARK_SVG}}",
-    	},
-    	darkMode:{
+        },
+        darkMode: {
             img: "{{PORTAL_LOGO_LIGHT_PNG}}",
             svg: "{{PORTAL_LOGO_LIGHT_SVG}}",
-    	},
+        },
     },
     pages: {
-	    latest:{
-	    	title: 'Recent uploads',
-	    },
-	    featured:{
-	    	title: 'Featured',
-	    },
-	    recommended:{
-	    	title: 'Recommended',
-	    },
-	    members:{
-	    	title: 'Members',
-	    },
+        latest: {
+            title: 'New Episodes',
+        },
+        featured: {
+            title: 'Featured',
+        },
+        recommended: {
+            title: 'For You',
+        },
+        members: {
+            title: 'Studio Members',
+        },
     },
     userPages: {
-    	liked: {
-	    	title: 'Liked media',
-    	},
-    	history: {
-	    	title: 'History',
-    	},
+        liked: {
+            title: 'My List',
+        },
+        history: {
+            title: 'Continue Watching',
+        },
     },
     taxonomies: {
-	    tags: {
-	    	title: 'Tags',
-	    },
-	    categories: {
-	    	title: 'Categories',
-	    },
+        tags: {
+            title: 'Genres',
+        },
+        categories: {
+            title: 'Shows',
+        },
     },
 };
-
