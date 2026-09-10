@@ -50,9 +50,7 @@ export const LayoutProvider = ({ children }) => {
 
     const enabledSidebar = Boolean(document.getElementById('app-sidebar') || document.querySelector('.page-sidebar'));
 
-    const [visibleSidebar, setVisibleSidebar] = useState(
-        isMediaPage || isEmbeddedApp ? false : cache.get('visible-sidebar')
-    );
+    const [visibleSidebar, setVisibleSidebar] = useState(false);
     const [visibleMobileSearch, setVisibleMobileSearch] = useState(false);
 
     const toggleMobileSearch = () => {
@@ -85,9 +83,8 @@ export const LayoutProvider = ({ children }) => {
             }
         });
 
-        setVisibleSidebar(
-            !isEmbeddedApp && !isMediaPage && 1023 < window.innerWidth && (null === visibleSidebar || visibleSidebar)
-        );
+        setVisibleSidebar(false);
+        removeClassname(document.body, 'visible-sidebar');
     }, []);
 
     const value = {
