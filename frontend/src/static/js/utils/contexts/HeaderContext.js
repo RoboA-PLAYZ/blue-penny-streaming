@@ -87,9 +87,15 @@ function popupMiddleNavItems() {
     }
   } else {
     items.push({
+      link: '/?switchProfile=1',
+      icon: 'switch_account',
+      text: 'Switch profile',
+    });
+
+    items.push({
       link: links.user.editProfile,
       icon: 'brush',
-      text: translateString('Edit profile'),
+      text: translateString('Edit account'),
     });
 
     if (user.can.changePassword) {
@@ -111,7 +117,7 @@ function popupBottomNavItems() {
     items.push({
       link: links.admin,
       icon: 'admin_panel_settings',
-      text: 'MediaCMS administration',
+      text: 'Blue Penny administration',
     });
   }
 
