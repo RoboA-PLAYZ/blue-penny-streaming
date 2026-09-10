@@ -28,4 +28,12 @@
         <p class="bp-auth-switch">New to Blue Penny? <a href="{{ signup_url }}">Create a free account</a>.</p>
     </div>
 </div>
+<script>
+for (let index = window.sessionStorage.length - 1; index >= 0; index -= 1) {
+    const key = window.sessionStorage.key(index);
+    if (key && key.indexOf('bluePenny.activeProfile.') === 0) {
+        window.sessionStorage.removeItem(key);
+    }
+}
+</script>
 {% endblock innercontent %}
